@@ -2,13 +2,14 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class Dropdown extends StatefulWidget {
-  const Dropdown({super.key});
+  Dropdown({super.key});
 
   @override
   State<Dropdown> createState() => _DropdownState();
 }
 
 class _DropdownState extends State<Dropdown> {
+  var size, width, height;
   final List<String> items = [
     'A_Item1',
     'A_Item2',
@@ -32,6 +33,10 @@ class _DropdownState extends State<Dropdown> {
   }
 
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    width = size.width;
+    height = size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Dropdown'),
@@ -41,15 +46,14 @@ class _DropdownState extends State<Dropdown> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: 200,
+              decoration: BoxDecoration(border: Border.all(width: 0.1)),
+              height: height * 0.1,
               width: double.infinity,
               child: Center(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('This is a dropdown search box'),
-                    const SizedBox(
-                      width: 40,
-                    ),
+                    const Text('This is a dropdown \nsearch box'),
                     DropdownButtonHideUnderline(
                       child: DropdownButton2<String>(
                         isExpanded: true,

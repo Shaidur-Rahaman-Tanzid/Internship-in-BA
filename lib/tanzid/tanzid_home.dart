@@ -1,8 +1,11 @@
 //import 'dart:js';
+import 'package:ba_training/tanzid/Avater.dart';
 import 'package:ba_training/tanzid/Dropdown.dart';
 import 'package:ba_training/tanzid/Stream_builder2.dart';
+import 'package:ba_training/tanzid/colors.dart';
 import 'package:ba_training/tanzid/dio_req.dart';
 import 'package:ba_training/tanzid/future_builder.dart';
+import 'package:ba_training/tanzid/path_provider.dart';
 import 'package:ba_training/tanzid/stream_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -41,11 +44,11 @@ class Tanzid_Home extends StatelessWidget {
     width = size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Day 5 works'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 114, 125, 180),
-      ),
+      // appBar: AppBar(
+      //   title: Text(''),
+      //   centerTitle: true,
+      //   backgroundColor: const Color.fromARGB(255, 114, 125, 180),
+      // ),
       body: Container(
         // decoration: BoxDecoration(border: Border.all(width: 2)),
         width: double.infinity,
@@ -83,19 +86,21 @@ class Tanzid_Home extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => stream_builder2()));
               }),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _btn('Circular Avater', () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => Avater()));
-                  }),
-                  // const CircleAvatar(
-                  //   backgroundImage: NetworkImage(
-                  //       'https://img.freepik.com/free-photo/tropical-macaw-perched-vibrant-feathers-focus-generated-by-ai_188544-9720.jpg?w=740&t=st=1704883482~exp=1704884082~hmac=7b997822b530ac12c82bd178e837197ca7962fafe3edbec69d2efbbd10e5a4fb'),
-                  // ),
-                ],
-              ),
+
+              _btn('Circular Avater', () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Avater()));
+              }),
+              // const CircleAvatar(
+              //   backgroundImage: NetworkImage(
+              //       'https://img.freepik.com/free-photo/tropical-macaw-perched-vibrant-feathers-focus-generated-by-ai_188544-9720.jpg?w=740&t=st=1704883482~exp=1704884082~hmac=7b997822b530ac12c82bd178e837197ca7962fafe3edbec69d2efbbd10e5a4fb'),
+              // ),
+
+              _btn('Path Provider', () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => path_provider()));
+              }),
+
               _btn('Dio', () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => dio_req()));

@@ -33,7 +33,17 @@ class _Future_builderState extends State<Future_builder> {
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(snapshot.data.toString()),
+              Text(
+                snapshot.data.toString(),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});

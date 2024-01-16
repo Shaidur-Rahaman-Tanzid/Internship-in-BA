@@ -10,28 +10,40 @@ class dio_req extends StatefulWidget {
 
 class _dio_reqState extends State<dio_req> {
   // var x = '0';
+  var x;
+  var dio = Dio();
+  Future fetchData() async {
+    var responce =
+        await dio.get('https://jsonplaceholder.typicode.com/todos/2');
+    print("Res" + responce.statusCode.toString());
+
+    if (responce.statusCode == 200) {
+      x = responce.data;
+      setState(() {});
+    } else {
+      print(responce.statusCode);
+    }
+  }
+
+  Future<List?>? _getDio() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          ElevatedButton(
-              onPressed: () {
-                fetchData();
-                // x = fetchData() as String;
-              },
-              child: const Text('Fatch Data')),
+          Text(x['title']),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  fetchData();
+                  // x = fetchData() as String;
+                },
+                child: const Text('Fatch Data')),
+          ),
           // Text(x),
         ],
       ),
     );
   }
-}
-
-Future fetchData() async {
-  var dio = Dio();
-  var responce = await dio.get('https://jsonplaceholder.typicode.com/todos/1');
-  print(responce.statusCode);
-  print(responce.data.toString());
 }
