@@ -10,14 +10,12 @@ class Avater extends StatefulWidget {
 class _AvaterState extends State<Avater> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Container(
-          child: CircleAvatar(
-            radius: 50,
-            backgroundImage: NetworkImage(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyzQyiesjovetiwqwjWzss8ZX_baOSHBOiAgZsevkiBw&s'),
-          ),
+        child: CircleAvatar(
+          radius: 50,
+          backgroundImage: NetworkImage(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyzQyiesjovetiwqwjWzss8ZX_baOSHBOiAgZsevkiBw&s'),
         ),
       ),
     );
