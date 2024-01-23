@@ -1,17 +1,18 @@
 //import 'dart:js';
-import 'package:ba_training/tanzid/Avater.dart';
-import 'package:ba_training/tanzid/Dropdown.dart';
-import 'package:ba_training/tanzid/Stream_builder2.dart';
-import 'package:ba_training/tanzid/colors.dart';
-import 'package:ba_training/tanzid/dio_req.dart';
-import 'package:ba_training/tanzid/future_builder.dart';
-import 'package:ba_training/tanzid/path_provider.dart';
-import 'package:ba_training/tanzid/stream_builder.dart';
+import 'package:ba_training/tanzid/component2/Avater.dart';
+import 'package:ba_training/tanzid/component2/Dropdown.dart';
+import 'package:ba_training/tanzid/component2/Stream_builder2.dart';
+import 'package:ba_training/tanzid/component2/dio_req.dart';
+import 'package:ba_training/tanzid/component2/future_builder.dart';
+import 'package:ba_training/tanzid/component2/path_provider.dart';
+import 'package:ba_training/tanzid/component2/shared_preference.dart';
+import 'package:ba_training/tanzid/component2/stream_builder.dart';
+import 'package:ba_training/tanzid/component3/slider.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 //import 'futureBuilder.dart';
 
-class Tanzid_Home extends StatelessWidget {
+class TanzidHome extends StatelessWidget {
   var size, height, width;
 
   void _showdialog(BuildContext context) {
@@ -86,7 +87,6 @@ class Tanzid_Home extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => stream_builder2()));
               }),
-
               _btn('Circular Avater', () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Avater()));
@@ -104,6 +104,18 @@ class Tanzid_Home extends StatelessWidget {
               _btn('Dio', () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => dio_req()));
+              }),
+              _btn('Shared Preference', () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => sharedPreference()));
+              }),
+              _btn('Slider Image', () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SliderImage()));
               }),
             ],
           ),

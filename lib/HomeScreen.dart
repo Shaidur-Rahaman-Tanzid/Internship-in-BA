@@ -18,25 +18,24 @@ class HomeScreen extends StatelessWidget {
           ),
           body: Column(
             children: [
-              TabBar(
-                  tabs: [
-                    Tab(
-                      text: 'LITON',
-                    ),
-                    Tab(
-                      text: 'TANZID',
-                    ),
-                    Tab(
-                      text: 'SAKIB',
-                    ),
-                    Tab(
-                      text: 'AKHIRUL',
-                    ),
-                  ]),
+              TabBar(tabs: [
+                Tab(
+                  text: 'LITON',
+                ),
+                Tab(
+                  text: 'TANZID',
+                ),
+                Tab(
+                  text: 'SAKIB',
+                ),
+                Tab(
+                  text: 'AKHIRUL',
+                ),
+              ]),
               Expanded(
                 child: TabBarView(children: [
                   Liton_Home(),
-                  Tanzid_Home(),
+                  TanzidHome(),
                   Sakib_Home(),
                   Akhirul_Home(),
                 ]),
